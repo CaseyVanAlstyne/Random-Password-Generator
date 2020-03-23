@@ -1,16 +1,12 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-var getLength = 0;
-var isCharTypeNum = "false";
-var isCharTypeUpper = "false";
-var isCharTypeLower = "false";
-var isCharTypeSpecial = "false";
-var newPassword = [];
+// variables for user selection
+var typeLowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+var typeUpperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var typeNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var typeSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', ':', '"', '<', '>', '?', '"'];
 
-const typeLowerCaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-const typeUpperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-const typeNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
-const typeSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', ':', '"', '<', '>', '?', '"'];
+// Master array list for user-selection variables
+var characterList = [typeLowerCaseLetters, typeUpperCaseLetters, typeNumbers, typeSpecialCharacters]
+console.log(characterList);
 
 //prompt for length
 //confirm character types
@@ -22,6 +18,7 @@ function getUserInput() {
     isCharTypeLower = confirm("Include lowercase letters in your password? ");
     isCharTypeSpecial = confirm("Include special characters in your password? ");
 };
+console.log(getUserInput);
 
 var userChoices = [];
 
@@ -50,7 +47,6 @@ function writePassword() {
         newPassword += userChoices[Math.floor(Math.random() * (userChoices.length - 1))];
     }
 };
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);}
