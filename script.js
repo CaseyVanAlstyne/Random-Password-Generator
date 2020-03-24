@@ -22,7 +22,7 @@ function getUserInput() {
    if (isCharTypeUpper == true)
         userChoices = userChoices.concat(typeUpperCaseLetters);
     if (isCharTypeLower == true)
-        userChoices = userChoices.concat(typeUpperCaseLetters);
+        userChoices = userChoices.concat(typeLowerCaseLetters);
     if (isCharTypeNum == true)
         userChoices = userChoices.concat(typeNumbers);
     if (isCharTypeSpecial == true)
