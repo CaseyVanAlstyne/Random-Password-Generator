@@ -4,7 +4,12 @@ var typeUpperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K
 var typeNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var typeSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', ':', '"', '<', '>', '?', '"'];
 
-// Master array list for user-selection variables
+var typeLowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
+var typeUpperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var typeNumbers = "0123456789";
+var typeSpecialCharacters = "'!@#$%,^&*(){}:<>?";
+
+// nested array list for user-selection variables
 var characterList = [typeLowerCaseLetters, typeUpperCaseLetters, typeNumbers, typeSpecialCharacters]
 console.log(characterList);
 
