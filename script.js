@@ -4,31 +4,22 @@ var typeUpperCaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K
 var typeNumbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var typeSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '{', '}', ':', '"', '<', '>', '?', '"'];
 
-var typeLowerCaseLetters = "abcdefghijklmnopqrstuvwxyz";
-var typeUpperCaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var typeNumbers = "0123456789";
-var typeSpecialCharacters = "'!@#$%,^&*(){}:<>?";
-
 // nested array list for user-selection variables
 var characterList = [typeLowerCaseLetters, typeUpperCaseLetters, typeNumbers, typeSpecialCharacters]
 console.log(characterList);
+var userChoices = [];
+var getLength = prompt("Select Length of 8-128 characters: ");
 
 //prompt for length
 //confirm character types
 //get user input
 function getUserInput() {
-    getLength = prompt("Select Length of 8-128 characters: ");
-    isCharTypeNum = confirm("Include numbers in your password? ");
-    isCharTypeUpper = confirm("Include uppercase letters in your password? ");
-    isCharTypeLower = confirm("Include lowercase letters in your password? ");
-    isCharTypeSpecial = confirm("Include special characters in your password? ");
-};
-console.log(getUserInput);
+   var isCharTypeNum = confirm("Include numbers in your password? ");
+   var isCharTypeUpper = confirm("Include uppercase letters in your password? ");
+   var isCharTypeLower = confirm("Include lowercase letters in your password? ");
+   var isCharTypeSpecial = confirm("Include special characters in your password? ");
 
-var userChoices = [];
-
-function generateUserChoices() {
-    if (isCharTypeUpper == true)
+   if (isCharTypeUpper == true)
         userChoices = userChoices.concat(typeUpperCaseLetters);
     if (isCharTypeLower == true)
         userChoices = userChoices.concat(typeUpperCaseLetters);
@@ -36,22 +27,28 @@ function generateUserChoices() {
         userChoices = userChoices.concat(typeNumbers);
     if (isCharTypeSpecial == true)
         userChoices = userChoices.concat(typeSpecialCharacters);
+        console.log(userChoices);
 };
+getUserInput();
+
+
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePassword() {console.log("hityu");
   var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
+  console.log(passwordText);
+  var newPassword = "";
+  
   if (userChoices.length < typeNumbers.length || getLength < 8) {
     alert("Can you count? You need more characters than that! ")
 } else {
     for (i = 0; i < getLength; i++) {
-        newPassword += userChoices[Math.floor(Math.random() * (userChoices.length - 1))];
+       newPassword += userChoices[Math.floor(Math.random() * (userChoices.length - 1))];
     }
+    passwordText.value = newPassword;
+    console.log(newPassword);
 };
-
+}
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);}
+var generateBtn = document.querySelector("#generate");
+generateBtn.addEventListener("click", writePassword);
