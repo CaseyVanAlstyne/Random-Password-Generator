@@ -34,13 +34,13 @@ getUserInput();
 
 
 // Write password to the #password input
-function writePassword() {console.log("hityu");
+function writePassword() {
   var passwordText = document.querySelector("#password");
   console.log(passwordText);
   var newPassword = "";
   
   if (userChoices.length < typeNumbers.length || getLength < 8) {
-    alert("Can you count? You need more characters than that! ")
+    alert("Can you not count? You are supposed to pick fewer than 8 characters and/or more than 128 characters! Try again!")
 } else {
     for (i = 0; i < getLength; i++) {
        newPassword += userChoices[Math.floor(Math.random() * (userChoices.length - 1))];
