@@ -8,7 +8,7 @@ var typeSpecialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '
 var characterList = [typeLowerCaseLetters, typeUpperCaseLetters, typeNumbers, typeSpecialCharacters]
 console.log(characterList);
 var userChoices = [];
-var getLength = prompt("Select Length of 8-128 characters: ");
+var getLength = prompt("Select Length of 8-128 characters for your password: ");
 
 //prompt for length
 //confirm character types
@@ -31,16 +31,14 @@ function getUserInput() {
 };
 getUserInput();
 
-
-
 // Write password to the #password input
 function writePassword() {
   var passwordText = document.querySelector("#password");
   console.log(passwordText);
   var newPassword = "";
   
-  if (userChoices.length < typeNumbers.length || getLength < 8) {
-    alert("Can you not count? You are supposed to pick fewer than 8 characters and/or more than 128 characters! Try again!")
+  if (userChoices.length < typeNumbers.length || getLength < 8 && userChoices.length < typeNumbers.length || getLength > 128) {
+    alert("Can you not count? You are supposed to pick more than 8 characters and/or fewer than 128 characters! Try again!")
 } else {
     for (i = 0; i < getLength; i++) {
        newPassword += userChoices[Math.floor(Math.random() * (userChoices.length - 1))];
