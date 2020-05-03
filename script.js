@@ -14,12 +14,12 @@ var getLength = prompt("Select Length of 8-128 characters for your password: ");
 //confirm character types
 //get user input
 function getUserInput() {
-   var isCharTypeNum = confirm("Include numbers in your password? ");
-   var isCharTypeUpper = confirm("Include uppercase letters in your password? ");
-   var isCharTypeLower = confirm("Include lowercase letters in your password? ");
-   var isCharTypeSpecial = confirm("Include special characters in your password? ");
+    var isCharTypeNum = confirm("Include numbers in your password? ");
+    var isCharTypeUpper = confirm("Include uppercase letters in your password? ");
+    var isCharTypeLower = confirm("Include lowercase letters in your password? ");
+    var isCharTypeSpecial = confirm("Include special characters in your password? ");
 
-   if (isCharTypeUpper == true)
+    if (isCharTypeUpper == true)
         userChoices = userChoices.concat(typeUpperCaseLetters);
     if (isCharTypeLower == true)
         userChoices = userChoices.concat(typeLowerCaseLetters);
@@ -27,25 +27,25 @@ function getUserInput() {
         userChoices = userChoices.concat(typeNumbers);
     if (isCharTypeSpecial == true)
         userChoices = userChoices.concat(typeSpecialCharacters);
-        console.log(userChoices);
+    console.log(userChoices);
 };
 getUserInput();
 
 // Write password to the #password input
 function writePassword() {
-  var passwordText = document.querySelector("#password");
-  console.log(passwordText);
-  var newPassword = "";
-  
-  if (userChoices.length < typeNumbers.length || getLength < 8 && userChoices.length < typeNumbers.length || getLength > 128) {
-    alert("Can you not count? You are supposed to pick more than 8 characters and/or fewer than 128 characters! Try again!")
-} else {
-    for (i = 0; i < getLength; i++) {
-       newPassword += userChoices[Math.floor(Math.random() * (userChoices.length - 1))];
-    }
-    passwordText.value = newPassword;
-    console.log(newPassword);
-};
+    var passwordText = document.querySelector("#password");
+    console.log(passwordText);
+    var newPassword = "";
+
+    if (userChoices.length < typeNumbers.length || getLength < 8 && userChoices.length < typeNumbers.length || getLength > 128) {
+        alert("Can you not count? You are supposed to pick more than 8 characters and/or fewer than 128 characters! Try again!")
+    } else {
+        for (i = 0; i < getLength; i++) {
+            newPassword += userChoices[Math.floor(Math.random() * (userChoices.length - 1))];
+        }
+        passwordText.value = newPassword;
+        console.log(newPassword);
+    };
 }
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
