@@ -136,4 +136,5 @@ function writePassword() {
 // Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
 generateBtn.addEventListener("click", writePassword);
+console.log(generateBtn);
 //need to add in catch for incorrect user input.
