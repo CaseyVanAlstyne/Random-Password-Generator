@@ -214,3 +214,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//Need to add section to store and list previous passwords. Should be in a card below the card with the generate password button.
